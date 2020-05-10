@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="title">Set compatibility for HUAWEI OLT</h1>
+
+  <main>
+
+    <section class="inputs">
+      <h3>1. Get the current mode.</h3><br/>
+      <button class="button" (click)="getCurrentMode()">Get current mode</button><br/>
+      <span class="mode">{{ 'Mode: ' + (currentMode || '...') }}</span><br/><br/>
+      <h3>2. Select y change the mode.</h3><br/>
+      <button 
+        class="button" 
+        [ngClass]="{ active: currentMode === 'DEFAULT' }" 
+        [disabled]="currentMode !== 'DEFAULT' || (isLoading$ | async)" 
+        (click)="changeToHuaweiMode()"
+      >
+        To HUAWEI mode
+      </button><br/>
+      <button 
+        class="button" 
+        [ngClass]="{ active: currentMode === 'HUAWEI' }" 
+        [disabled]="currentMode !== 'HUAWEI' || (isLoading$ | async)" 
+        (click)="changeToDefaultMode()"
+      >
+        To DEFAULT mode</button>
+      <br/><br/>
+    
+      <a routerLink="/">BACK HOME</a>
+    </section>
+
+    <section class="outputs">
+      <textarea #content cols="30" rows="10">{{ outputs }}</textarea>
+    </section>
+
+  </main>
+  
+</div>

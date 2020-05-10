@@ -1,0 +1,84 @@
+:host {
+  * {
+    box-sizing: border-box;
+  }
+
+  .container {
+
+    main {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+
+      .inputs {
+        width: 50%;
+        height: 100%;
+        text-align: center;
+        
+        h3 {
+          color: white;
+        }
+
+        .button {
+          margin: 6px 0;
+          padding: 10px;
+          border-radius: 6px;
+          font-weight: bold;
+          border: 1px solid black;
+        }
+    
+        .button:hover,
+        .button:active {
+          cursor: pointer;
+          background-color: black;
+          color: white;
+        }
+    
+        .button:focus {
+          outline: none;
+        }
+
+        .button.active {
+          background-color: yellowgreen;
+          color: black;
+        }
+
+        .button.active:hover,
+        .button.active:active {
+          cursor: pointer;
+          background-color: green;
+          background-color: white;
+        }
+    
+        .mode {
+          display: inline-block;
+          width: 160px;
+          height: 42px;
+          margin: 6px;
+          padding: 10px;
+          border: 2px solid black;
+          font-weight: bold;
+          background-color: white;
+          color: black;
+          text-align: center;
+        }
+      }
+
+      .outputs {
+        width: 50%;
+        height: 100%;
+
+        textarea {
+          width: calc(100% - 32px);
+          height: 100%;
+          margin: 0 16px;
+          background-color: rgba(0, 0, 0, 0.5);
+          color: white;
+        }
+      }
+    }
+  }
+
+    
+}
